@@ -25,7 +25,7 @@ In the initial implementation, there was no method to inspect the LaTeX code pri
 Errors aren't only introduced in the compilation process, especially as this LaTeX code is being generated through an XSLT transformation, which could have already introduced errors as writing LaTeX code through XSLT transformations is a little tricky. 
 Issues in the LaTeX code from the XSLT transformation often originate in the discrepancies of XML and LaTeX, such as white-space management and nesting, resulting in typical errors such as missing or improperly nested curly braces. These errors are hard to detect without reviewing the generated LaTeX code.
 
-To address this, Johannes Stigler, the lead developer of GAMS at the time, introduced the `getLaTeX()` method. 
+To address this, [Johannes Stigler](https://orcid.org/0000-0003-0803-1496), the lead developer of GAMS at the time, introduced the `getLaTeX()` method. 
 This method allowed for the inspection of LaTeX code sent into the automated compilation process, making it easier to debug the output. 
 
 ### Difficulty with some LaTeX features during compilation 
