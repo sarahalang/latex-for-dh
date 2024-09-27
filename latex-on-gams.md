@@ -28,7 +28,7 @@ Issues in the LaTeX code from the XSLT transformation often originate in the dis
 To address this, Johannes Stigler, the lead developer of GAMS at the time, introduced the `getLaTeX()` method. 
 This method allowed for the inspection of LaTeX code sent into the automated compilation process, making it easier to debug the output. 
 
-## Difficulty with some LaTeX features during compilation 
+### Difficulty with some LaTeX features during compilation 
 The containerized environment running Python Rubber also faced several issues:
 
 LaTeX files often require multiple compilation runs to correctly render elements such as references, citations, and bibliographies. 
