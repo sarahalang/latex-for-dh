@@ -14,8 +14,8 @@ I will provide examples on how this can be done and tutorials for minimal docume
 
 ## How the process used to work
 1. **XML data is stored in GAMS:** This XML data is at the core of the repository which implements the single-source principle.
-2. **XSLT Transformation generates LaTeX code:** The archived XML data undergoes an XSLT transformation to generate LaTeX code in the `getLaTeXPDF()` method. This is available only for XML files that are archived in the repostory, not for XML files located in content data streams. The output of this method used to be accessible via a `getLaTeX()` method (`sdef:TEI/getLaTeX`) which at the time of writing this is already not available anymore. However, being able to view the auto-generated LaTeX code is essential for debugging and being able to tell if the compilation errors result from the code itself or the multi-step compilation routine on the server. As of 2024, this method is no longer accessible in the current system (dockerized version of GAMS3).
-3. **PDF is compiled form the code using Python's Rubber** ([`latex-rubber`](https://pypi.org/project/latex-rubber/)): Once the LaTeX code is generated, it is compiled into a PDF using a containerized system using Python Rubber. This method encountered several issues, which are discussed below.
+2. **XSLT Transformation generates LaTeX code:** The archived XML data undergoes an XSLT transformation to generate LaTeX code in the `getLaTeXPDF()` method. This is available only for XML files that are archived in the repository, not for XML files located in content data streams. The output of this method used to be accessible via a `getLaTeX()` method (`sdef:TEI/getLaTeX`) which at the time of writing is already not available anymore. However, being able to view the auto-generated LaTeX code is essential for debugging and being able to tell if the compilation errors result from the code itself or the multi-step compilation routine on the server. As of 2024, this method is no longer accessible in the current system (dockerized version of GAMS3).
+3. **PDF is compiled from the code using Python's Rubber** ([`latex-rubber`](https://pypi.org/project/latex-rubber/)): Once the LaTeX code is generated, it is compiled into a PDF using a containerized system using Python Rubber. This method encountered several issues, which are discussed below.
 
 ---
 
@@ -52,7 +52,7 @@ Moreover, it was noted that in most cases, users did not actually require dynami
 As a result, the team concluded that it was more resource-efficient to manually compile locally and archive the final PDFs alongside the XML data.
 
 Experiences in the GRaF project (https://gams.uni-graz.at/graf) where excessive use of XML-to-LaTeX XSLT transformations 
-was made to generate different versions of printouts for students and teachers (to be used in teaching contexts) show that not only is it resource intensive 
+was made to generate different versions of printouts for students and teachers (to be used in teaching contexts) show that not only is it resource-intensive 
 and relatively cumbersome to generate complicated LaTeX outputs from XML files on the side of those writing the stylesheets, it is also complicated and 
 resource-intensive on the side of the GAMS developers and sysadmins. 
 Thus, ultimately, the decision to only compile PDF versions based on XML-to-LaTeX transformations locally and archive a static PDF on GAMS is well justified. 
@@ -61,12 +61,12 @@ Thus, ultimately, the decision to only compile PDF versions based on XML-to-LaTe
 ### Experiences from the GRaF Project
 In the GRaF project ([GAMS GRaF Project](https://gams.uni-graz.at/graf)), extensive use of XML-to-LaTeX XSLT transformations was employed to generate printouts for both students and teachers in teaching contexts. However, these experiences revealed that generating complex LaTeX outputs from XML files is resource-intensive and cumbersome for both those developing the XSLT stylesheets and the GAMS developers and sysadmins tasked with maintaining the system.
 
-In the GRaF project, some LaTeX functionalities developed specifically for use in GAMS and at the DDH (such as LaTeX for print versions of critical apparatus using the `reledmac` package) were eventually removed from the XSLT stylesheets. This decision was made after numerous efforts to debug the system revealed that GAMS would not compile the LaTeX code properly, making it unviable to continue investing time and energy these features. 
+In the GRaF project, some LaTeX functionalities developed specifically for use in GAMS and at the DDH (such as LaTeX for print versions of critical apparatus using the `reledmac` package) were eventually removed from the XSLT stylesheets. This decision was made after numerous efforts to debug the system revealed that GAMS would not compile the LaTeX code properly, making it unviable to continue investing time and energy in these features. 
 While transforming TEI to LaTeX could be particularly useful for generating complex print outputs, such as critical editions, these use cases aren't actually used in practice at DDH/Zim, rendering these features pointless and potential sources for lots of work and errors.
 
 Another issue encountered during the GRaF project was that the LaTeX methods were only available for archived XML files anyway, 
 not  those provided as content datastreams - so we could only generate LaTeX from the texts in the repository, 
-not all accompanying materials (such as project descriptions). For these, the method outlined here (of simply compiling the LaTeX locally and archiving the resulting static PDF) was already used. 
+not all accompanying materials (such as project descriptions). For these, the method outlined here (simply compiling the LaTeX locally and archiving the resulting static PDF) was already used. 
 
 ### Testing Checklist
 
@@ -80,6 +80,6 @@ The following checklist can be used as an inspiration for testing the LaTeX func
 - **LaTeX containing TikZ:** Ensure that LaTeX documents using TikZ (for creating vector graphics) compile as intended.
 - **LaTeX containing Ancient Greek:** Confirm that special characters, particularly Ancient Greek, are handled properly during the LaTeX generation and compilation process. This needs special packages and examples can be found in [GRaF](https://gams.uni-graz.at/graf).
 - **Is the cache cleared properly after each run or are `.aux` files left lying around?** Even though all `.aux` files should be cleaned out, this was not always the case in the past and resulted in errors that were hard to trace down. 
-- **Does `getLaTeX()` work?:** Test the `getLaTeX()` method to ensure that LaTeX code can be inspected prior to compilation.
+- **Does `getLaTeX()` work?:** Test the `getLaTeX()` method to ensure that LaTeX code can be inspected before compilation.
 - **Does `getLaTeXPDF()` work?:** Verify that the `getLaTeXPDF()` method successfully generates PDFs from LaTeX code.
 
