@@ -59,7 +59,7 @@ Thus, ultimately, the decision to only compile PDF versions based on XML-to-LaTe
 
 
 ### Experiences from the GRaF Project
-In the GRaF project ([GAMS GRaF Project](https://gams.uni-graz.at/graf)), extensive use of XML-to-LaTeX XSLT transformations was employed to generate printouts for both students and teachers in teaching contexts. However, these experiences revealed that generating complex LaTeX outputs from XML files is resource-intensive and cumbersome for both those developing the XSLT stylesheets and the GAMS developers and sysadmins tasked with maintaining the system.
+In the [GRaF Project](https://gams.uni-graz.at/graf), extensive use of XML-to-LaTeX XSLT transformations was employed to generate printouts for both students and teachers in teaching contexts. However, these experiences revealed that generating complex LaTeX outputs from XML files is resource-intensive and cumbersome for both those developing the XSLT stylesheets and the GAMS developers and sysadmins tasked with maintaining the system.
 
 In the GRaF project, some LaTeX functionalities developed specifically for use in GAMS and at the DDH (such as LaTeX for print versions of critical apparatus using the `reledmac` package) were eventually removed from the XSLT stylesheets. This decision was made after numerous efforts to debug the system revealed that GAMS would not compile the LaTeX code properly, making it unviable to continue investing time and energy in these features. 
 While transforming TEI to LaTeX could be particularly useful for generating complex print outputs, such as critical editions, these use cases aren't actually used in practice at DDH/Zim, rendering these features pointless and potential sources for lots of work and errors.
