@@ -1,2 +1,2 @@
-# latex-for-dh
-This repo willcollect some of my materials on LaTeX for Digital Humanities (see also latex-ninja.com ).
+# LaTeX for Digital Humanities
+This repo collects some of my materials on LaTeX for Digital Humanities (see also latex-ninja.com ).
