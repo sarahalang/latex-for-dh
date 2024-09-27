@@ -15,5 +15,4 @@ This repo collects some of my materials on LaTeX for Digital Humanities (see als
 - [Youtube video of the talk "TUG 2024 — Sarah Lang — LaTeX in the Digital Humanities"](https://www.youtube.com/watch?v=hS9YNkKwlbw&list=PLLt9mKFAx-FZCy6aqYbXSNyaAkr8Nv14X&index=11)
 
 ## LaTeX on GAMS
-See [`latex-on-gams.md`](https://github.com/sarahalang/latex-for-dh/latex-on-gams.md
-) for final documentation of how LaTeX used to be generated on the [Graz GAMS repository](gams.uni-graz.at) on the fly from XML data. 
+See [`latex-on-gams.md`](https://github.com/sarahalang/latex-for-dh/blob/main/latex-on-gams.md) for final documentation of how LaTeX used to be generated on the [Graz GAMS repository](gams.uni-graz.at) on the fly from XML data. 
