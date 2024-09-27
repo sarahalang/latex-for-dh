@@ -42,7 +42,7 @@ However, the BibTeX component still did not compile properly, indicating that th
 ### Container and Disk Space Issues:
 The container responsible for generating and compiling LaTeX grew in size during the process, consuming excessive resources. 
 Additionally, auxiliary files (`.aux`) were retained between runs, causing LaTeX to compile with outdated data. Technically, this container should have been recreated from scratch each time. But in practice at some point, it became apparent that old auxiliary files were still present. 
-This required frequent manual intervention and debugging at the server level which isn't ideal if it were supposed to be by lots of projects.
+This required frequent manual intervention and debugging at the server level which isn't ideal if it were supposed to be used by lots of projects.
 
 ---
 
