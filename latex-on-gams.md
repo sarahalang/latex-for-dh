@@ -22,7 +22,7 @@ I will provide examples on how this can be done and tutorials for minimal docume
 ## Key Challenges
 ### Debugging LaTeX Code
 In the initial implementation, there was no method to inspect the LaTeX code prior to compilation, which complicated the debugging process. 
-Errors aren't only introduced in the compilation process, especially as this LaTeX code is being generated through an XSLT transformation, which could have already introduced errors - writing LaTeX code through XSLT transformations is a little tricky
+Errors aren't only introduced in the compilation process, especially as this LaTeX code is being generated through an XSLT transformation, which could have already introduced errors as writing LaTeX code through XSLT transformations is a little tricky. 
 Issues in the LaTeX code from the XSLT transformation often originate in the discrepancies of XML and LaTeX, such as white-space management and nesting, resulting in typical errors such as missing or improperly nested curly braces. These errors are hard to detect without reviewing the generated LaTeX code.
 
 To address this, Johannes Stigler, the lead developer of GAMS at the time, introduced the `getLaTeX()` method. 
