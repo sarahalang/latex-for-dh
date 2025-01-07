@@ -13,6 +13,7 @@ This repo collects some of my materials on LaTeX for Digital Humanities (see als
 ## TUG 2024 (Prague)
 - [conference program](https://www.tug.org/tug2024/program.html ) with [abstract](https://www.tug.org/tug2024/abstracts/lang-humanities.txt) and [slides](https://www.tug.org/tug2024/slides/lang-humanities.pdf)
 - [Youtube video of the talk "TUG 2024 — Sarah Lang — LaTeX in the Digital Humanities"](https://www.youtube.com/watch?v=hS9YNkKwlbw&list=PLLt9mKFAx-FZCy6aqYbXSNyaAkr8Nv14X&index=11)
+- I wrote this up as my belated contribution to the TUG 2024 proceedings. [It was published in TUGboat vol.46, no.3](https://doi.org/10.47397/tb/45-3/tb141lang-dh). Cite as: Sarah Lang, LaTeX in the Digital Humanities, in:  TUGboat volume 45, number 3 (2024), pages 305–309. https://doi.org/10.47397/tb/45-3/tb141lang-dh - The PDF will become publicly available as soon as the next issue of TUGboat is published. 
 
 ## LaTeX on GAMS
 See [`latex-on-gams.md`](https://github.com/sarahalang/latex-for-dh/blob/main/latex-on-gams.md) for final documentation of how LaTeX used to be generated on the [Graz GAMS repository](gams.uni-graz.at) on the fly from XML data. 
